@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+#include <vector>
+
+
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        int start = 0;
+        int end = nums.size()-1;
+         int mid = start + (end-start)/2;
+        while(start<=end){
+            // int mid = start + (end-start)/2;
+            if(nums[mid]==target){
+                return mid;
+            }
+            if(nums[mid] < target){
+                start = mid + 1;
+            }
+            else {
+                end = mid - 1;
+            }
+        }
+        return start;
+    }
+};
+
+int main (){
+    Solution sol;
+vector<int> nums ={1,5,7,9};
+int target;
+cout << "enter the target :" << endl;
+cin >> target;
+cout << sol.searchInsert(nums, target);
+
+}
