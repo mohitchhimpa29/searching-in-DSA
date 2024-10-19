@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+int linearsearch(int arr[], int size, int val){
+    for(int i=0; i<size; i++){
+        if(arr[i]==val){
+            return i;
+        }
+        
+    }
+    
+        return -1;
+        
+}
+
+int main()
+{
+    int arr[5]={3,5,8,2,9};
+    
+    cout << "the array is :";
+    for(int j=0; j<5; j++){
+        cout << arr[j]<<" ";
+    }
+    cout << endl;
+    int n;
+    cout << "which element do you want to search " << endl;
+    cin >> n ;
+    
+   
+    cout << "the element found at index " << linearsearch(arr,5,n) << endl;
+
+    if(linearsearch(arr,5,n)==-1){
+        cout << "it means element not found " << endl;
+    }
+    return 0;
+}
